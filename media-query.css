@@ -1,0 +1,48 @@
+@media (max-width: 1024px) {
+
+    section {
+        gap: var(--padding-l);
+    }
+}
+
+@media (max-width: 768px) {
+
+    section {
+        flex-direction: column;
+    }
+
+    section .task-col {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    nav {
+        flex-direction: column;
+        gap: var(--padding-m);
+        text-align: center;
+    }
+
+    section {
+        padding: var(--padding-m);
+    }
+
+    .modal .center {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    button {
+        width: 100%;
+    }
+
+    .modal .center {
+        padding: var(--padding-l);
+    }
+
+}

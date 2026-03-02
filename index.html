@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-query.css">
+    <title>Kanban Board</title>
+</head>
+<body>
+
+    <main>
+        <nav>
+            <div class="left">KANBAN</div>
+            <div class="right">
+                <button type="button" id="task-btn">New Task</button>
+            </div>
+        </nav>
+
+        <section class="board">
+
+            <div id="todo" class="task-col">
+                <div class="heading">
+                    <div class="task-col1-left">ToDo</div>
+                    <div class="task-right">0</div>
+                </div>
+            </div>
+
+            <div id="progress" class="task-col">
+                <div class="heading">
+                    <div class="task-col2-left">In Progress</div>
+                    <div class="task-right">0</div>
+                </div>
+            </div>
+
+            <div id="done" class="task-col">
+                <div class="heading">
+                    <div class="task-col3-left">Done</div>
+                    <div class="task-right">0</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div class="modal">
+        <div class="bg"></div>
+        <div class="center">
+            <input 
+                type="text" 
+                id="modal-input" 
+                placeholder="Mention Your Task Here"
+            >
+
+            <textarea 
+                id="modal-txtArea" 
+                placeholder="Task Description"
+            ></textarea>
+
+            <button 
+                type="button" 
+                id="add-new-task" 
+                class="add-task-btn"
+            >
+                Add Task
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
