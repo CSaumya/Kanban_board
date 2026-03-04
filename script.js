@@ -77,6 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function launchConfetti() {
+    confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 },
+        colors: ['#6c63ff', '#00f5ff', '#ffffff']
+    });
+}
     columns.forEach(column => {
 
         column.addEventListener('dragover', e => e.preventDefault());
@@ -89,15 +97,20 @@ document.addEventListener("DOMContentLoaded", function () {
             column.classList.remove('hover-over');
         });
 
-        column.addEventListener('drop', e => {
-            e.preventDefault();
-            column.classList.remove('hover-over');
+       column.addEventListener('drop', e => {
+    e.preventDefault();
+    column.classList.remove('hover-over');
 
-            if (dragElement) {
-                column.appendChild(dragElement);
-                saveToLocalStorage();
-            }
-        });
+    if (dragElement) {
+        column.appendChild(dragElement);
+
+        if (column.id === "done") {
+            launchConfetti();
+        }
+
+        saveToLocalStorage();
+    }
+});
     });
 
     toggleModal.addEventListener('click', () => {

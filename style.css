@@ -27,25 +27,24 @@ html{
     --border-radius-l: 15px;
     --border-radius-xl: 20px;
     --border-radius-xxl: 30px;
-
-    /* button hover */
-    --button-hover: #1f2a4a;
 }
 
 :root{
-    --bg-color: #37353E;
-    --secondary-bg-color: #7c9da3;
-    --primary-color: #D3DAD9;  
-    --secondary-color: #2f4961;
+    --bg-color: #0f0c29;
+    --secondary-bg-color: #1c1a3a;
+    --primary-color: #6c63ff;
+    --secondary-color: #ffffff;
+    --accent-color: #00f5ff;
+    --button-hover: #574bff;
 }
 
 body{
-    background-color: var(--bg-color);
-    color: var(--primary-color);
+    background: linear-gradient(135deg, #0f0c29, #302b63);
+    color: var(--secondary-color);
 }
 
 main{
-    height: 100%;
+    height: 100vh; 
     display: flex;
     flex-direction: column;
 }
@@ -58,18 +57,21 @@ nav{
 }
 
 button{
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
     border: none;
     outline: none;
     padding: var(--padding-m) var(--padding-l);
     border-radius: var(--border-radius-m);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 button:hover{
     background-color: var(--button-hover);
+    box-shadow: 0 0 15px var(--accent-color);
+    transform: translateY(-2px);
 }
 
 section{
@@ -81,41 +83,49 @@ section{
 }
 
 section .task-col{
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(6px);
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     flex-grow: 1;
     padding: var(--padding-m);
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-l);
     display: flex;
     flex-direction: column;
     gap: var(--padding-m);
-    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.3s ease;
 }
 
 section .task-col.hover-over{
-    border: 2px dashed var(--primary-color);
-    transform: scale(1.05);
+    border: 2px dashed var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-color);
+    transform: scale(1.03);
 }
 
 section .heading{
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--accent-color);
 }
 
 section .task{
-    background-color: var(--secondary-bg-color);
+    background-color: var(--primary-color);
     border-radius: var(--border-radius-m);
     padding: var(--padding-m);
     display: flex;
     flex-direction: column;
     gap: var(--padding-s);
     cursor: grab;
+    transition: all 0.3s ease;
 }
 
 section .task button{
     align-self: flex-end;
+    background-color: var(--accent-color);
+    color: #0f0c29;
+}
+
+section .task button:hover{
+    background-color: #00d9e6;
 }
 
 .modal{
@@ -138,36 +148,42 @@ section .task button{
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(6, 6, 82, 0.368);
-    backdrop-filter: blur(4px);
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
 }
 
 .modal .center{
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-bg-color);
     padding: var(--padding-xl);
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-l);
     display: flex;
     flex-direction: column;
     gap: var(--padding-m);
     z-index: 10;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.modal .center input, .modal .center textarea, .modal .center select{
+.modal .center input,
+.modal .center textarea,
+.modal .center select{
     background-color: var(--primary-color);
     border: none;
     outline: none;
     padding: var(--padding-m);
     border-radius: var(--border-radius-s);
+    color: white;
 }
 
+/* ===== ADD TASK BUTTON ===== */
 .add-task-btn{
-    background-color: rgb(5, 5, 103);
-    transition: background-color 0.3s ease;
+    background-color: var(--accent-color);
+    color: #0f0c29;
     width: fit-content;
     align-self: center;
+    font-weight: 600;
 }
 
-.add-task-btn :hover{
-    background-color: rgb(1, 1, 41);
+.add-task-btn:hover{
+    background-color: #00d9e6;
+    box-shadow: 0 0 15px var(--accent-color);
 }
-
